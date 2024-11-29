@@ -1,0 +1,10 @@
+import pytest
+
+from the_millionth_fibonacci_kata import fib
+
+data = [(0, 0), (1, 1), (2, 1), (3, 2), (4, 3), (5, 5), (-1, 1), (-2, -1), (-5, 5), (-6, -8), (-10, -55), (-9, 34), (1000, 43466557686937456435688527675040625802564660517371780402481729089536555417949051890403879840079255169295922593080322634775209689623239873322471161642996440906533187938298969649928516003704476137795166849228875)]
+
+
+@pytest.mark.parametrize('input, answer', data)
+def test_inputs_and_answers_equality(input, answer):
+    assert fib(input) == answer
